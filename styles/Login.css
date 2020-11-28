@@ -1,0 +1,80 @@
+body,div,h1,form,input, { 
+  padding:0;
+  margin:0;
+}
+
+ html { 
+  background-image: url("../images/hd1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+ }
+
+div.main {
+  margin: 80px auto;
+  width: 400px; 
+  height: 600px; 
+ }
+
+ h1 {
+  font-size: 50px;
+  font-weight: 300;
+  font-family: Andale Mono,monospace;
+  color: black;
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 10px;
+}
+
+input[type=Email],input[type=password]{
+  width: 250px; 
+  height: 39px;  
+  border-radius: 15px; 
+  background-color: white; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,1); 
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px; 
+  padding-left: 10px;
+}
+
+div.pwd {
+	margin-bottom: 30px;
+}
+
+input[name="Regbutton"] {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #192841;
+  display: inline-block;
+  float: center;
+  text-decoration: none
+  box-shadow: 1px 2px 5px rgba(0,0,0,1); 
+  padding: 6px 20px 6px 20px;
+  margin: 10px 8px 20px 0px;
+  border-radius: 15px; 
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:link {
+  color: darkblue;
+  text-decoration: none;
+}
+
+a:visited {
+  color: darkblue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: purple;
+}

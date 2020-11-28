@@ -1,0 +1,134 @@
+body,div,h1,form,input, {
+  padding:0;
+  margin:0;
+}
+
+form{
+  position: relative;
+  margin-top: -20px;
+}
+
+ html {
+  background-image: url("../images/hd1.png");
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+ }
+
+div.main {
+  margin: 25px auto;
+  width: 400px;
+  height: 600px;
+ }
+
+ h1 {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Andale Mono,monospace;
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+ input[type=radio] {
+  visibility: hidden;
+}
+
+label.radio {
+  font-size: 20px;
+  font-family: Andale Mono,monospace;
+  color: black;
+  font-weight:bold;
+  cursor: pointer;
+  text-indent: 35px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+label.radio:before {
+  background: white;
+  content:'';
+  position: absolute;
+  top:2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+label.radio:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 0.5em;
+	height: 0.25em;
+	background: transparent;
+	top: 7.5px;
+	left: 4.5px;
+	border: 3px solid black;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+}
+
+input[type=radio]:checked + label:after {
+	opacity: 1;
+}
+
+input[type=text],input[type=date],input[type=Email],input[type=tel],input[type=password]{
+  width: 250px;
+  height: 39px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 1px 2px 5px rgba(0,0,0,1);
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px;
+  padding-left: 10px;
+}
+
+div.pwd {
+	margin-bottom: 30px;
+}
+
+input[name="Regbutton"] {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #192841;
+  display: inline-block;
+  float: center;
+  text-decoration: none
+  box-shadow: 1px 2px 5px rgba(0,0,0,1);
+  padding: 6px 20px 6px 20px;
+  margin: 5px 8px 10px 0px;
+  border-radius: 15px;
+}
+
+p {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+a:link {
+  color: darkblue;
+  text-decoration: none;
+}
+
+a:visited {
+	color: darkblue;
+}
+
+a:hover {
+	 text-decoration: underline;
+}
+
+a:active {
+	color: purple;
+}
