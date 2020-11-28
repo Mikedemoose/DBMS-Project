@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 $username = $_SESSION['username'];
 
-$query = "SELECT * FROM notifications WHERE username='$username'";
+$query = "SELECT * FROM notifications WHERE username='$username' ORDER BY time_of_posting DESC";
 $result = mysqli_query($conn, $query);
 ?>
 

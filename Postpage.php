@@ -29,8 +29,8 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 		</div>
 		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
-		<a name="notification" href="#notification" title="Notification"><i class="icofont-notification"></i></button>
-			<a name="settings" href="#settings"><i class="fa fa-cogs"></i></a>
+		<a name="notification" href="Nootifications.php" title="Notification"><i class="icofont-notification"></i></button>
+			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 
 		</div>
 <?php if(!isset($_GET['feedVisibility'])): ?>
