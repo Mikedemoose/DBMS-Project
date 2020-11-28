@@ -1,10 +1,6 @@
-<?session_start();
-
+<?php
+session_start();
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
-$username = $_SESSION['username'];
-
-$query = "SELECT * FROM notifications WHERE username='$username' ORDER BY time_of_posting DESC";
-$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +32,12 @@ $result = mysqli_query($conn, $query);
 
 	</div>
 	
-<?php while($line = mysqli_fetch_assoc($result)): ?>
+<?php 
+$username = $_SESSION['username'];
+$conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project") or die("Messed up");
+$query = "SELECT * FROM notifications WHERE username='$username' AND user_ != '$username' ORDER BY time_of_notif DESC";
+$result = mysqli_query($conn, $query);
+while($line = mysqli_fetch_assoc($result)): ?>
 
 <?php
 $url = "Postpage.php?postid=";

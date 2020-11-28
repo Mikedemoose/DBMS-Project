@@ -71,17 +71,6 @@ $url .= $url1;
 
 					</div>
 <?php endwhile ?>
-<form method="post">
-	<input type="hidden" value="sugu" name="logoutB">
-	<input type="submit" value="logout" name="logout">
-</form>
-<?php
-if(isset($_POST['logoutB'])){
-	session_destroy();
-	header('Location:login.php');
-}
-
-?>
 					<div class="gototop">
 						<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
 					</div>
