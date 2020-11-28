@@ -1,21 +1,17 @@
-<?session_start();
-
-$conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
+<?php
+session_start();
 $username = $_SESSION['username'];
-
-$query = "SELECT * FROM notifications WHERE username='$username'";
-$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 
-	<link rel="stylesheet" href="styles/Notifications.css" type="text/css">
+	<link rel="stylesheet" href="styles/Settings.css" type="text/css">
 	<link rel="stylesheet" href="styles/icofont/icofont.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
 
-	<title>Notifications</title>
+	<title>Settings</title>
 </head>
   <body>
 
@@ -35,24 +31,25 @@ $result = mysqli_query($conn, $query);
 			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 
 	</div>
-	
-<?php while($line = mysqli_fetch_assoc($result)): ?>
-
-<?php
-$url = "Postpage.php?postid=";
-$url1 = (string)$line['post_id'];
-$url .= $url1;
-$url .= "&feedVisibility=0";
-?>
-    <a href="<?php echo $url?>">
-	<div class="notifs">
-		<p><span name="like"><i class="fa fa-heart"></i></span><span name="suku"><?php echo $line['notification']?></span></p>	
+    
+    <a href="Change.html">
+	<div class="changepwd">
+		<p><span name="pwd"><i class="fa fa-lock"></i></span><span name="pwdtext"> Change Password</span></p>	
 	</div>
 	</a>
-<?php endwhile?>
-	<div class="gototop">
-		<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
-	</div>
 
+	<a href="Settings.php?logout=1">
+	<div class="signout">
+		<p><span name="door"><i class="icofont-logout"></i></span><span name="logout">Log Out</span></p>	
+	</div>
+<?php
+
+if(isset($_GET['logout'])){
+	session_destroy();
+	header("Location:Login.php");
+}
+
+?>
+	</a>
   </body>
 </html>
