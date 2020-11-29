@@ -14,7 +14,7 @@
 		<img src="images/logo.png" name="logo">
 		<a name="about" href="About.php">About-Us </a>
 		<text name="1">|</text>
-		<a name="contact" href="Contact.php">Contact-Us </a>
+		<a name="contact" href="Contacts.php">Contact-Us </a>
 		<text name="2">|</text>
 		<a name="login" href="Login.php">Log-In</a>
 		<a name="signup" href="register.php" name="signup">Sign-Up </a>
