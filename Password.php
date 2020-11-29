@@ -3,6 +3,7 @@ session_start();
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 
 $username = $_SESSION['username'] ;
+
 $query = "SELECT * FROM user_list WHERE username='$username'";
 $result = mysqli_query($conn, $query);
 $line = mysqli_fetch_assoc($result);
@@ -28,7 +29,7 @@ $password = md5($line['password']);
 		<img src="images/logo.png" name="logo">
 		<div class="search">
 			<form method="post">
-				<input type="text" name="searchtext" placeholder="Search...">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 <?php
@@ -46,16 +47,53 @@ if(isset($_POST['searchtext'])){
 		<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 
 	</div>
-    
+<?php
+	if(isset($_GET['error'])):
+?>
+	<div id="passError" style="display:none"><?php $_GET['error']?></div>
+<?php endif ?>
+<script language="JavaScript" type="text/javascript">
+
+		var errorType = document.getElementById('passError').innerHTML ;
+		errorType = parseInt(errorType);
+		if(errorType == 1){
+			alert("Incorrect Password");
+		}
+		else if(errorType == 2){
+			alert("passwords do not match");
+		}
+
+</script>
    <div class="post">
    		
    		<p name="heading"><i class="icofont-settings-alt"></i><span name="text">Change Password</span></p>
 
 		<div class="pwd">
+		<form method='post'>
 			<p><input type="password" name="oldpwd" id="name" placeholder="Current Password" required/></p>
 			<p><input type="password" name="newpwd" id="name" placeholder="New Password" required/></p>
 			<p><input type="password" name="cnewpwd" id="name" placeholder="Confirm New Password" required/></p>
+			<input type="submit" value="change Password" name="submit">
+		</form>
 		</div>
+<?php
+	if(isset($_POST['submit'])){
+		$oldPass = md5(mysqli_real_escape_string($conn, $_POST['oldpwd']));
+		if($oldPass != $password){
+			header("Location:Password.php?error=1");
+		}else{
+			$newPass = md5(mysqli_real_escape_string($conn, $_POST['newpwd']));
+			$confirmPass = md5(mysqli_real_escape_string($conn, $_POST['cnewpwd']));
+			if($newPass != $confirmPass){
+				header("Location:Password.php?error=2");
+			}else{
+				$query5 = "UPDATE user_list SET pwd = '$newPass' WHERE username = '$username'";
+				mysqli_query($query5);
+				header("Location:Userfeed.php?message=1");
+			}
+		}
+	}
+?>
 	
 	</div>
 
