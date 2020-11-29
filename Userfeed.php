@@ -38,7 +38,7 @@ $followingCount = $line1['no_following'];
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
-		<a name="home" href="Userfeed.html" title="Home"><i class="fa fa-home"></i></a>
+		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
 		<a name="notification" href="Notifications.php" title="Notification"><i class="icofont-notification"></i></button>
 			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
@@ -52,7 +52,7 @@ $followingCount = $line1['no_following'];
 				<text name="followercount"><?php echo $followerCount ?></text></p>
 				<p ><a name="following" href="#following">Following :</a>	
 					<text name="followingcount"><?php echo $followingCount ?></text></p>	
-					<p><a  name="viewprofile" href="#profile">View Profile</a></p>
+					<p><a  name="viewprofile" href="Profilepage.php">View Profile</a></p>
 				</div>
 
 <?php 
@@ -66,7 +66,12 @@ while($line = mysqli_fetch_assoc($result)):
 				<div class="post">
 
 					<p name="heading"><?php echo $line['title'] ?>
-						<a name="author" href="#shaiju">-<?php echo $line['username']?></a></p>
+<?php
+$url = "Profilepage.php?userProfile=";
+$url1 = (string)$line['username'];
+$url .= $url1;
+?>
+						<a name="author" href="<?php echo $url?>">-<?php echo $line['username']?></a></p>
 <?php
 $url = "Postpage.php?postid=";
 $url1 = (string)$line['post_id'];

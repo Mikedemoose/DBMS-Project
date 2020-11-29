@@ -38,13 +38,20 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project") or die("M
 $query = "SELECT * FROM notifications WHERE username='$username' AND user_ != '$username' ORDER BY time_of_notif DESC";
 $result = mysqli_query($conn, $query);
 while($line = mysqli_fetch_assoc($result)): ?>
-
+<?php if($line['type_of_notif'] == "LIKE"):?>
 <?php
 $url = "Postpage.php?postid=";
 $url1 = (string)$line['post_id'];
 $url .= $url1;
 $url .= "&feedVisibility=0";
 ?>
+<?php else:?>
+<?php
+$url = "Profilepage.php?userProfile=";
+$url1 = (string)$line['user_'];
+$url .= $url1;
+?>	
+<?php endif ?>
     <a href="<?php echo $url?>">
 	<div class="notifs">
 		<p><span name="like"><i class="fa fa-heart"></i></span><span name="suku"><?php echo $line['notification']?></span></p>	
