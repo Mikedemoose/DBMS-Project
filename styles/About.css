@@ -2,11 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Bree Serif);
 
 html{
-	background-image: url("images/blog6.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	overflow-y: scroll;
+  background-image: url("images/blog6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -18,6 +17,87 @@ body {
 }
 
 /* Navigation Bar*/
+
+.navigation {
+	width: 100%;
+}
+
+.navigation text{
+	color: #fff;
+	font-family: Courier,monospace;
+	font-weight: bold;
+	font-size: 30px;
+	border-radius: 20px;
+    padding: 14px 16px;
+	position: absolute;
+}
+
+.navigation img {
+ border-radius: 15%;
+ height: 15%;
+ margin-left: 0px;
+ position: absolute;
+ left: 20px;
+}	
+
+.navigation a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 25px;
+	border-radius: 20px;
+    padding: 14px 16px;
+    position: absolute;
+    font-family: Verdana, sans-serif;
+}
+
+.navigation text[name="1"] {
+	left: 870px;
+}
+
+.navigation text[name="2"] {
+	left: 1120px;
+}
+
+.navigation text[name="3"] {
+	left: 1330px;
+}
+
+.navigation a[name="about"] {
+    left: 700px;
+}
+
+.navigation a[name="contact"] {
+    left: 930px;
+}
+
+.navigation a[name="signup"] {
+	 left: 1180px;
+}
+
+.navigation a[name="login"] {
+    left: 1385px;
+}
+
+.navigation a[name="about"]:hover {
+	color: #fff;
+}
+
+.navigation a[name="about"] {
+	color: #33ff99;
+}
+
+.navigation a[name="signup"]:hover {
+	color: #33ff99;
+}
+
+.navigation a[name="contact"]:hover {
+	color: #33ff99;
+}
+
+.navigation a[name="login"]:hover {
+	color: #33ff99;
+}
 
 .post {
 	background-image: linear-gradient( -45deg, #ffccff 0%, #ffccff 50%, #ffeeff 50%, #ffeeff 50%);
