@@ -19,6 +19,15 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 	<title>Userfeed</title>
 </head>
 <body>
+<?php
+$username = $_SESSION['username'];
+$query = "SELECT no_followers, no_following FROM user_list WHERE username='$username'";
+$result1 = mysqli_query($conn, $query);
+$line1 = mysqli_fetch_assoc($result1);
+$followerCount = $line1['no_followers'];
+$followingCount = $line1['no_following'];
+
+?>
 	<a name="top"></a>
 
 	<div class="navigation">
@@ -40,15 +49,14 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 			<a name="propic"><i class="fa fa-user-circle"></i></a>
 			<p name="username"><?php echo $_SESSION['username']?></p>
 			<p ><a name="followers" href="#followers">Followers :</a>
-				<text name="followercount">0</text></p>
+				<text name="followercount"><?php echo $followerCount ?></text></p>
 				<p ><a name="following" href="#following">Following :</a>	
-					<text name="followingcount">0</text></p>	
+					<text name="followingcount"><?php echo $followingCount ?></text></p>	
 					<p><a  name="viewprofile" href="#profile">View Profile</a></p>
 				</div>
 
 <?php 
-
-$query = "SELECT * FROM posts ORDER BY time_of_posting DESC";
+$query = "CALL view_feed('$username')";
 $result = mysqli_query($conn, $query);
 
 while($line = mysqli_fetch_assoc($result)):
