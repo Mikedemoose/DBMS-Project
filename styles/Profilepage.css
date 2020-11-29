@@ -169,6 +169,7 @@ body {
   border-radius: 90px;
   text-decoration: none;
   text-align: right;
+  cursor: pointer;
 }
 
 .postnew button {
