@@ -31,8 +31,8 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 		</div>
 		<a name="home" href="Userfeed.html" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
-		<a name="notification" href="#notification" title="Notification"><i class="icofont-notification"></i></button>
-			<a name="settings" href="#settings"><i class="fa fa-cogs"></i></a>
+		<a name="notification" href="Notifications.php" title="Notification"><i class="icofont-notification"></i></button>
+			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 
 		</div>
 
@@ -48,7 +48,7 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 
 <?php 
 
-$query = "SELECT * FROM posts";
+$query = "SELECT * FROM posts ORDER BY time_of_posting DESC";
 $result = mysqli_query($conn, $query);
 
 while($line = mysqli_fetch_assoc($result)):
@@ -71,17 +71,6 @@ $url .= $url1;
 
 					</div>
 <?php endwhile ?>
-<form method="post">
-	<input type="hidden" value="sugu" name="logoutB">
-	<input type="submit" value="logout" name="logout">
-</form>
-<?php
-if(isset($_POST['logoutB'])){
-	session_destroy();
-	header('Location:login.php');
-}
-
-?>
 					<div class="gototop">
 						<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
 					</div>

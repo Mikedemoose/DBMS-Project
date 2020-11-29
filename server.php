@@ -65,7 +65,6 @@ if(isset($_POST['E-mail'])){
   $line = mysqli_fetch_assoc($result);
   if($line){
     if($login_cred_pwd != $line['pwd']){
-        echo "Password sherikk adikk mone";
         array_push($errors, "Wrong password. Try Again.");
       }
     else{
@@ -74,7 +73,6 @@ if(isset($_POST['E-mail'])){
       header("Location:Userfeed.php");
     }
   }else{
-    echo "register cheyy naaye";
     array_push($errors, "Email is not registered. ");
   }
 }
