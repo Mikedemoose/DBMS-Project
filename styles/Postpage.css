@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Bree Serif);
 
 html{
-	background-image: url("images/blog6.jpg");
+	background-image: url("../images/blog6.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;

@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['postid'] = $_GET['postid'];
 
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 
@@ -41,8 +40,8 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 
 <?php 
 
-$postID = $_SESSION['postid'];
-$userName = $_SESSION['username'] ;
+$postID = $_GET['postid'];
+$userName = $_SESSION['username'];
 
 $query = "SELECT * FROM posts WHERE post_id = '$postID'";
 $result = mysqli_query($conn, $query);
@@ -71,7 +70,21 @@ if($line2){
 					<a name="liking" href="#liking"><i id="myButton" class="fa fa-heart-o"></i></a>
 <?php endif?>
 					<text name="likecount" id="likecount"><?php echo $line['likes']?></text>
-					<span name="delete"><a href="deletelink">Delete Post</a></span>
+<?php if($line['username'] == $_SESSION['username']): 
+	$url3 = "Postpage.php?deleteLink=1&postid=";
+	$url4 = (string)$postID;
+	$url3 .= $url4;	
+	
+?>
+					<span name="delete"><a href="<?php echo $url3 ?>">Delete Post</a></span>
+		<?php 
+			if(isset($_GET['deleteLink'])){
+				$q = "CALL delete_post('$postID')";
+				mysqli_query($conn, $q);
+				header("Location:Userfeed.php");
+			}
+		?>
+<?php endif?>
 				</p>
 				</div>
 <script language="JavaScript" type="text/javascript">
