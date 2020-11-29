@@ -40,7 +40,7 @@ $line = mysqli_fetch_assoc($result);
 			</form>
 		</div>
 		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
-		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
+		<a name="explore" href="Explore.php" title="Explore"><i class="icofont-telescope"></i></a>
 		<a name="notification" href="Notifications.php" title="Notification"><i class="icofont-notification"></i></button>
 			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 

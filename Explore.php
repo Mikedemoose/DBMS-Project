@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$username = $_SESSION['username'];
+
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 ?>
 
@@ -7,20 +10,19 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 <html>
 <head>
 
-	<link rel="stylesheet" href="styles/Notifications.css" type="text/css">
+	<link rel="stylesheet" href="styles/Explore.css" type="text/css">
 	<link rel="stylesheet" href="styles/icofont/icofont.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-	<title>Notifications</title>
+	<title>Explore</title>
 </head>
-  <body>
-
+<body>
 	<a name="top"></a>
 
 	<div class="navigation">
 		<img src="images/logo.png" name="logo">
 		<div class="search">
-			<form method="post">
+		<form method="post">
 				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
@@ -38,37 +40,37 @@ if(isset($_POST['searchtext'])){
 		<a name="notification" href="Notifications.php" title="Notification"><i class="icofont-notification"></i></button>
 			<a name="settings" href="Settings.php"><i class="fa fa-cogs"></i></a>
 
-	</div>
-	
+		</div>
+
+				<div class="post">
 <?php 
-$username = $_SESSION['username'];
-$conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project") or die("Messed up");
-$query = "SELECT * FROM notifications WHERE username='$username' AND user_ != '$username' ORDER BY time_of_notif DESC";
-$result = mysqli_query($conn, $query);
-while($line = mysqli_fetch_assoc($result)): ?>
-<?php if($line['type_of_notif'] == "LIKE"):?>
+
+$sql = "SELECT * FROM posts ORDER BY likes DESC";
+$result = mysqli_query($conn, $sql);
+while($line = mysqli_fetch_assoc($result)):?>
+
+					<p name="heading"><?php echo $line['title']?>
+<?php
+$url = "Profilepage.php?userProfile=";
+$url1 = (string)$line['username'];
+$url .= $url1;
+?>
+						<a name="author" href="<?php echo $url?>"><?php echo $line['username']?></a></p>
 <?php
 $url = "Postpage.php?postid=";
 $url1 = (string)$line['post_id'];
 $url .= $url1;
 $url .= "&feedVisibility=0";
 ?>
-<?php else:?>
-<?php
-$url = "Profilepage.php?userProfile=";
-$url1 = (string)$line['user_'];
-$url .= $url1;
-?>	
-<?php endif ?>
-    <a href="<?php echo $url?>">
-	<div class="notifs">
-		<p><span name="like"><i class="fa fa-heart"></i></span><span name="suku"><?php echo $line['notification']?></span></p>	
-	</div>
-	</a>
+						<p><a href="<?php echo $url?>" name="linktopost">See Full Post</a>
+							<text name="likecount"><?php echo $line['likes']?></text>
+							<i class="fa fa-heart"></i>
+						</p>
 <?php endwhile?>
-	<div class="gototop">
-		<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
-	</div>
+					</div>
+					<div class="gototop">
+						<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+					</div>
 
-  </body>
-</html>
+				</body>
+				</html>
