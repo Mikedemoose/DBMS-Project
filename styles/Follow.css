@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree Serif);
+
+html{
+	background-image: url("images/blog6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-y: scroll;
+}
+
+body {
+	background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 0px;
+	width: 100%;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Navigation Bar*/
+
+.navigation {
+	background-color: #000;
+	position: fixed;
+	overflow: hidden;
+	font-size: 40px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 9999;
+}
+
+.navigation img {
+	height: 80px;
+	font-size: 40px;
+	border-radius: 20px;
+	float: left;
+	display: block;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.navigation a {
+	float: left;
+	display: block;
+	color: grey;
+	text-align: center;
+	padding: 14px 66px;
+	text-decoration: none;
+	font-size: 35px;
+	border-radius: 50%;
+}
+
+.navigation a:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.navigation .search {
+	float: left;
+	padding-right: 40px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.navigation input[type="text"] {
+	padding: 6px;
+	margin-top: 30px 0px 10px 0px;
+	padding-top: 10px;
+	border: 3px solid black;
+	width: 400px;
+	border-radius: 10px; 
+}
+
+.searchterm:focus{
+	color: #000;
+}
+
+.navigation .search button {
+	background: #fff;
+	padding: 5px 10px 5px 10px;
+	margin: 30px 0px 0px 0px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.backup a {
+	color: white;
+	position: fixed;
+	font-size: 17px;
+	left: 210px;
+	top: 140px;
+}
+
+.post {
+	background: #FFCCFF;
+	padding: 10px;
+	position: relative;
+	height: cover;
+	top: 250px;
+	left: 200px;
+	width: 1050px;
+	border-radius: 80px;
+	text-decoration: none;
+}
+
+.post p,a{
+	margin-left: 50px;
+}
+
+.post a[name="heading"] {
+	margin-left: 300px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.post a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	text-decoration: none;
+	padding-left: 30px;
+}
+
+.post span[name="username"] {
+	padding-left: 10px;
+}
+
+.header {
+	background: #FFCCFF;
+	padding: 4px;
+	position: relative;
+	height: cover;
+	top: 150px;
+	left: 500px;
+	width: 400px;
+	border-radius: 80px;
+	text-decoration: none;
+}
+
+.header p,a{
+	margin-left: 50px;
+}
+
+.header p[name="head"] {
+	text-align: center;
+	margin-left: 20px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.gototop a {
+	position: fixed;
+	font-size: 50px;
+	color: #fff;
+	opacity: 0.5;
+	top: 700px;
+	left: 1410px;
+}
