@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree Serif);
+
+html{
+	background-image: url("images/blog6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-y: scroll;
+}
+
+body {
+	background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 0px;
+	width: 100%;
+
+}
+
+/* Navigation Bar*/
+
+.post {
+	background-image: linear-gradient( -45deg, #ffccff 0%, #ffccff 50%, #ffeeff 50%, #ffeeff 50%);
+	padding: 25px;
+	position: fixed;
+	height: cover;
+	top: 200px;
+	left: 250px;
+	width: 900px;
+	border-radius: 80px;
+	text-decoration: none;
+}
+
+.post p {
+	margin-left: 50px;
+}
+
+.post p[name="heading"] {
+	font-family: 'Bree Serif';
+	font-weight: bold;
+	text-align: left;
+	font-size: 40px;
+}
+
+.sub {
+	font-size: 24px;
+	margin-left: 50px;	
+	color: #202020;
+}
+
+
+
