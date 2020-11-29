@@ -2,10 +2,11 @@
 @import url(https://fonts.googleapis.com/css?family=Bree Serif);
 
 html{
-  background-image: url("../images/blog6.jpg");
+  background-image: url("images/blog6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  
 }
 
 body {
@@ -14,7 +15,7 @@ body {
   overflow-y: scroll;
   margin-left: 0px;
   width: 100%;
-
+  overflow-y: scroll;
 }
 
 * {
@@ -62,6 +63,15 @@ body {
   color: #000;
 }
 
+.navigation a[name="explore"]{
+  color: #fff;
+}
+
+.navigation a[name="explore"]:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 .navigation .search {
   float: left;
   padding-right: 40px;
@@ -93,98 +103,6 @@ body {
   cursor: pointer;
 }
 
-/*Left Tab*/
-
-.lefttab {
-  background-image: linear-gradient( -45deg, #ffffff 0%, #ffffff 50%, #ffccff 50%, #ffccff 50%);
-  text-align: center;
-  font-size: 25px;
-  position: fixed;
-  font-weight: bold;
-  height: cover;
-  top: 150px;
-  left: 80px;
-  width: 300px;
-  border-radius: 90px;
-}
-
-.lefttab a {
-  text-decoration: none;
-}
-
-.lefttab a[name="propic"] {
-  position: relative;
-  font-size: 150px; 
-  padding-right: 45px;
-}
-
-.lefttab p[name="username"] {
-  position: relative;
-  word-wrap: break-word;
-  padding-top: 20px;  
-}
-
-.lefttab a[name="followers"],a[name="following"] {
-  color: #cc0066;
-  position: relative;
-  padding: 20px 0px 20px 0px;
-}
-
-.lefttab a:visited {
-  color: #cc0066;
-}
-
-.lefttab text[name="followercount"],text[name="followingcount"] {
-  position: relative;
-  padding-left: 35px;
-  padding-right: 10px;
-}
-
-.lefttab button {
-  background-color: white;
-  margin-left: 0px;
-  width: cover;
-  font-size: 25px; 
-  color: black;
-  font-weight: bold;
-  border-color: white;
-  border: none;
-  font-family: 'Open Sans', sans-serif;
-  cursor: pointer;
-}
-
-.lefttab button:focus {
-   outline: none;
-   border-color: white;
-}
-
-.postnew {
-  top: 150px;
-  padding: 10px;
-  position: relative;
-  height: cover;
-  top: 150px;
-  left: 450px;
-  width: 900px;
-  border-radius: 90px;
-  text-decoration: none;
-  text-align: right;
-  cursor: pointer;
-}
-
-.postnew button {
-  text-decoration: none;  
-  font-size: 25px;
-  border-radius: 20px;
-  padding: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.postnew button:focus {
-   outline: none;
-}
-
 
 /*main post*/
 
@@ -193,8 +111,8 @@ body {
   padding: 10px;
   position: relative;
   height: cover;
-  top: 200px;
-  left: 450px;
+  top: 150px;
+  left: 350px;
   width: 900px;
   border-radius: 90px;
   text-decoration: none;
