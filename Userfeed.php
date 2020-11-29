@@ -56,9 +56,9 @@ if(isset($_POST['searchtext'])){
 		<div class="lefttab">
 			<a name="propic"><i class="fa fa-user-circle"></i></a>
 			<p name="username"><?php echo $_SESSION['username']?></p>
-			<p ><a name="followers" href="#followers">Followers :</a>
+			<p ><a name="followers" href="Follow.php">Followers :</a>
 				<text name="followercount"><?php echo $followerCount ?></text></p>
-				<p ><a name="following" href="#following">Following :</a>	
+				<p ><a name="following" href="Follow.php?value=1">Following :</a>	
 					<text name="followingcount"><?php echo $followingCount ?></text></p>	
 					<p><a  name="viewprofile" href="Profilepage.php">View Profile</a></p>
 				</div>

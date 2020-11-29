@@ -60,15 +60,15 @@ $line = mysqli_fetch_assoc($result);
 	}
 ?>
 <?php if($username == $username1) : ?>
-			<p ><a name="followers" href="#followers">
+			<p ><a name="followers" href="Follow.php">
 				Followers :</a>
 				<text name="followercount"><?php echo $line['no_followers']?></text></p>
-				<p ><a name="following" href="#following">Following :</a>	
+				<p ><a name="following" href="Follow.php?value=1">Following :</a>	
 					<text name="followingcount"><?php echo $line['no_following']?></text></p>	
 <?php else :?>
-			<p ><a name="followers" href="#followers">Followers :</a>
+			<p ><a name="followers" href="Follow.php">Followers :</a>
 				<text  id = "followercount" name="followercount"><?php echo $line['no_followers']?></text></p>
-				<p ><a name="following" href="#following">Following :</a>	
+				<p ><a name="following" href="Follow.php?value=1">Following :</a>	
 					<text id = "followingcount" name="followingcount"><?php echo $line['no_following']?></text></p>
 					<p><button id="followButton" name="follow"><?php echo $follow ?></button></p>
 <?php endif?>
