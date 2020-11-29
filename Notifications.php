@@ -21,7 +21,7 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 		<img src="images/logo.png" name="logo">
 		<div class="search">
 			<form method="post">
-				<input type="text" name="searchtext" placeholder="Search...">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 <?php

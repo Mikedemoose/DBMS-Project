@@ -48,9 +48,11 @@ if(isset($_POST['searchtext'])){
 			<hr/>
 			<p name="authors">Authors:</p>
 <?php
-$sql1 = "CALL search_users('$string')";
-$result1 = mysqli_query($conn, $sql1);
-while($line1 = mysqli_fetch_row($result1)) :
+$sql1 = "CALL search_users('$string');";
+$sql1 .= "CALL search_users('$string')";
+mysqli_multi_query($conn, $sql1);
+$result = mysqli_store_result($conn);
+while($line1 = mysqli_fetch_row($result)) :
 ?>
 <?php
 $url = "Profilepage.php?userProfile=";
@@ -60,21 +62,25 @@ $url .= $url1;
 			<p name="authorcontent"><a name="oneauthor" href="<?php echo $url?>"><?php echo $line1[0] ?></a></p><br>
 <?php endwhile?>
 			<hr/>
+	<!--
 			<p name="posts">Posts:</p>
-<?php
-/*$sql1 = "CALL search_users('$string')";
-$result1 = mysqli_query($conn, $sql1);
-while($line1 = mysqli_fetch_row($result1)) :
+<?php/*
+mysqli_free_result($result);
+$result = mysqli_store_result($conn);
+while($line1 = mysqli_fetch_row($result)) :
+	*/
 ?>
-<?php
+<?php/*
 $urlf = "Postpage.php?postid=";
-$url1f = (string)$line2[2];
+$url1f = (string)$line1[2];
 $urlf .= $url1f;
-$urlf .= "&feedVisibility=0"; */
-?> <!--
-			<p name="postcontent"><a name="onepost" href="<?php echo $urlf ?>"><?php echo $line2[2] ?></a></p>
--->
+$urlf .= "&feedVisibility=0";
+ */
+?> 
+			<p name="postcontent"><a name="onepost" href="<?php //echo $urlf ?>"><?php //echo $line1[2] ?></a></p>
+
 <?php //endwhile?>
+-->
 	</div>
     
 	<div class="gototop">

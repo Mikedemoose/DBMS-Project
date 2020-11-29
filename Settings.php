@@ -21,7 +21,7 @@ $username = $_SESSION['username'];
 		<img src="images/logo.png" name="logo">
 		<div class="search">
 			<form method="post">
-				<input type="text" name="searchtext" placeholder="Search...">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 <?php
@@ -42,7 +42,9 @@ if(isset($_POST['searchtext'])){
     
     <a href="Change.html">
 	<div class="changepwd">
+		<a href="Password.php">
 		<p><span name="pwd"><i class="fa fa-lock"></i></span><span name="pwdtext"> Change Password</span></p>	
+		</a>
 	</div>
 	</a>
 
