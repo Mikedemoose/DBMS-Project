@@ -15,7 +15,7 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 	<link rel="stylesheet" href="styles/Userfeed.css" type="text/css">
 	<link rel="stylesheet" href="styles/icofont/icofont.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+	
 	<title>Userfeed</title>
 </head>
 <body>
@@ -33,10 +33,18 @@ $followingCount = $line1['no_following'];
 	<div class="navigation">
 		<img src="images/logo.png" name="logo">
 		<div class="search">
-			<form action="\Userpage.php">
-				<input type="text" name="searchtext" placeholder="Search...">
+			<form method="post">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
+<?php
+if(isset($_POST['searchtext'])){
+	$url = "Search.php?str=";
+	$str = (string)$_POST['searchtext'];
+	$url .= $str ;
+	header("Location:$url");
+}
+?>
 		</div>
 		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
@@ -71,7 +79,7 @@ $url = "Profilepage.php?userProfile=";
 $url1 = (string)$line['username'];
 $url .= $url1;
 ?>
-						<a name="author" href="<?php echo $url?>">-<?php echo $line['username']?></a></p>
+						<a name="author" href="<?php echo $url?>">article by <?php echo $line['username']?></a></p>
 <?php
 $url = "Postpage.php?postid=";
 $url1 = (string)$line['post_id'];
