@@ -2,104 +2,104 @@
 @import url(https://fonts.googleapis.com/css?family=Bree Serif);
 
 html{
-  background-image: url("../images/blog6.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-y: scroll;
+	background-image: url("images/blog6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-y: scroll;
 }
 
 body {
-  background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
-  font-family: 'Open Sans', sans-serif;
-  margin-left: 0px;
-  width: 100%;
+	background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 0px;
+	width: 100%;
 
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Navigation Bar*/
 
 .navigation {
-background-color: #000;
-position: fixed;
-overflow: hidden;
-font-size: 40px;
-top: 0px;
-left: 0px;
-width: 100%;
-z-index: 9999;
+	background-color: #000;
+	position: fixed;
+	overflow: hidden;
+	font-size: 40px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 9999;
 }
 
 .navigation img {
- height: 80px;
- font-size: 40px;
- border-radius: 20px;
- float: left;
- display: block;
- color: black;
- text-decoration: none;
- text-align: center;
- padding: 14px 16px;
+	height: 80px;
+	font-size: 40px;
+	border-radius: 20px;
+	float: left;
+	display: block;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
 }
 
 .navigation a {
-  float: left;
-  display: block;
-  color: grey;
-  text-align: center;
-  padding: 14px 66px;
-  text-decoration: none;
-  font-size: 35px;
-  border-radius: 50%;
+	float: left;
+	display: block;
+	color: grey;
+	text-align: center;
+	padding: 14px 66px;
+	text-decoration: none;
+	font-size: 35px;
+	border-radius: 50%;
 }
 
 .navigation a:hover {
-    background-color: #fff;
-    color: #000;
+	background-color: #fff;
+	color: #000;
 }
 
 .navigation a[name="home"]{
-  color: #fff;
+	color: #fff;
 }
 
 .navigation a[name="home"]:hover {
-    background-color: #fff;
-    color: #000;
+	background-color: #fff;
+	color: #000;
 }
 
 .navigation .search {
-  float: left;
-  padding-right: 40px;
-  padding-left: 20px;
-  margin-bottom: 20px;
+	float: left;
+	padding-right: 40px;
+	padding-left: 20px;
+	margin-bottom: 20px;
 }
 
 .navigation input[type="text"] {
-  padding: 6px;
-  margin-top: 30px 0px 10px 0px;
-  padding-top: 10px;
-  border: 3px solid black;
-  width: 400px;
-  border-radius: 10px; 
+	padding: 6px;
+	margin-top: 30px 0px 10px 0px;
+	padding-top: 10px;
+	border: 3px solid black;
+	width: 400px;
+	border-radius: 10px; 
 }
 
 .searchterm:focus{
-  color: #000;
+	color: #000;
 }
 
 .navigation .search button {
-  background: #fff;
-  padding: 5px 10px 5px 10px;
-  margin: 30px 0px 0px 0px;
-  border: 3px solid black;
-  color: black;
-  font-size: 20px;
-  border-radius: 10px;
-  cursor: pointer;
+	background: #fff;
+	padding: 5px 10px 5px 10px;
+	margin: 30px 0px 0px 0px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 .backup a {
@@ -111,26 +111,26 @@ z-index: 9999;
 }
 
 .post {
-  background: #FFCCFF;
-  padding: 25px;
-  position: relative;
-  height: cover;
-  top: 150px;
-  left: 250px;
-  width: 1200px;
-  border-radius: 80px;
-  text-decoration: none;
+	background: #FFCCFF;
+	padding: 25px;
+	position: relative;
+	height: cover;
+	top: 150px;
+	left: 250px;
+	width: 1200px;
+	border-radius: 80px;
+	text-decoration: none;
 }
 
 .post p,a,button {
-  margin-left: 50px;
+	margin-left: 50px;
 }
 
 .post p[name="heading"] {
- font-family: 'Bree Serif';
- font-weight: bold;
- text-align: left;
- font-size: 30px;
+	font-family: 'Bree Serif';
+	font-weight: bold;
+	text-align: left;
+	font-size: 30px;
 }
 
 .post a {
@@ -138,21 +138,21 @@ z-index: 9999;
 }
 
 .post a[name="author"]{
- float: right;
- font-family: 'Open Sans', sans-serif;
- margin-left: 130px;
- padding: 5px 50px 0px 0px;
- font-size: 20px;
- font-weight: bold;
- text-decoration: none;
+	float: right;
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 130px;
+	padding: 5px 50px 0px 0px;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .post a[name="author"]:visited {
-  color:#551A8B;
+	color:#551A8B;
 }
 
 .post a[name="author"]:click {
-  color:#551A8B;
+	color:#551A8B;
 }
 
 .post p[name="content"] {
@@ -164,29 +164,41 @@ z-index: 9999;
 
 .post p[name="likoos"] {
 	text-align: left;
+	text-decoration: none;
 }
 
 .post a[name="liking"] {
-  color: red;
-  font-size: 30px;
-  padding: 5px 5px 0px 0px;
-  margin-left: 0px;
-  font-weight: bold;  
-  text-decoration: none;
+	color: red;
+	font-size: 30px;
+	padding: 5px 5px 0px 0px;
+	margin-left: 0px;
+	font-weight: bold;  
+	text-decoration: none;
 }
 
 .post text[name="likecount"] {
-  color: black;
-  font-size: 25px;
-  padding-right: 50px;
-  font-weight: bold;
+	color: black;
+	font-size: 25px;
+	padding-right: 50px;
+	font-weight: bold;
+}
+
+.post span[name="delete"] {
+	float: right;
+	color: #551A88;
+	margin-right: 30px;
+	font-size: 25px;
+}
+
+.post a[name="deletelink"] {
+	text-decoration: none;
 }
 
 .gototop a {
-  position: fixed;
-  font-size: 50px;
-  color: black;
-  opacity: 0.5;
-  top: 700px;
-  left: 1400px;
+	position: fixed;
+	font-size: 50px;
+	color: #fff;
+	opacity: 0.5;
+	top: 700px;
+	left: 1410px;
 }

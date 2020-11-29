@@ -71,6 +71,7 @@ if($line2){
 					<a name="liking" href="#liking"><i id="myButton" class="fa fa-heart-o"></i></a>
 <?php endif?>
 					<text name="likecount" id="likecount"><?php echo $line['likes']?></text>
+					<span name="delete"><a href="deletelink">Delete Post</a></span>
 				</p>
 				</div>
 <script language="JavaScript" type="text/javascript">
