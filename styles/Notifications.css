@@ -118,6 +118,10 @@ a[name="link"] {
 	text-decoration: none;
 }
 
+.notifs p,a,button {
+  margin-left: 50px;
+}
+
 .notifs p,a {
 	text-decoration: none;
 }

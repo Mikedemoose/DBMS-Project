@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree Serif);
+
+html{
+  background-image: url("images/blog6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
+  font-family: 'Open Sans', sans-serif;
+  overflow-y: scroll;
+  margin-left: 0px;
+  width: 100%;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Navigation Bar*/
+
+.navigation {
+  background-color: #000;
+  position: fixed;
+  overflow: hidden;
+  font-size: 40px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navigation img {
+ height: 80px;
+ font-size: 40px;
+ border-radius: 20px;
+ float: left;
+ display: block;
+ color: black;
+ text-decoration: none;
+ text-align: center;
+ padding: 14px 16px;
+}
+
+.navigation a {
+  float: left;
+  display: block;
+  color: grey;
+  text-align: center;
+  padding: 14px 66px;
+  text-decoration: none;
+  font-size: 35px;
+  border-radius: 50%;
+}
+
+.navigation a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.navigation .search {
+  float: left;
+  padding-right: 40px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.navigation input[type="text"] {
+  padding: 6px;
+  margin-top: 30px 0px 10px 0px;
+  padding-top: 10px;
+  border: 3px solid black;
+  width: 400px;
+  border-radius: 10px; 
+}
+
+.searchterm:focus{
+  color: #000;
+}
+
+.navigation .search button {
+  background: #fff;
+  padding: 5px 10px 5px 10px;
+  margin: 30px 0px 0px 0px;
+  border: 3px solid black;
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*Left Tab*/
+
+.lefttab {
+  background-image: linear-gradient( -45deg, #ffffff 0%, #ffffff 50%, #ffccff 50%, #ffccff 50%);
+  text-align: center;
+  font-size: 25px;
+  position: fixed;
+  font-weight: bold;
+  height: cover;
+  top: 150px;
+  left: 80px;
+  width: 300px;
+  border-radius: 90px;
+}
+
+.lefttab a {
+  text-decoration: none;
+}
+
+.lefttab a[name="propic"] {
+  position: relative;
+  font-size: 150px; 
+  padding-right: 45px;
+}
+
+.lefttab p[name="username"] {
+  position: relative;
+  word-wrap: break-word;
+  padding-top: 20px;  
+}
+
+.lefttab a[name="followers"],a[name="following"] {
+  color: #cc0066;
+  position: relative;
+  padding: 20px 0px 20px 0px;
+}
+
+.lefttab a:visited {
+  color: #cc0066;
+}
+
+.lefttab text[name="followercount"],text[name="followingcount"] {
+  position: relative;
+  padding-left: 35px;
+  padding-right: 10px;
+}
+
+.lefttab button {
+  background-color: white;
+  margin-left: 0px;
+  width: cover;
+  font-size: 25px; 
+  color: black;
+  font-weight: bold;
+  border-color: white;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+
+.lefttab button:focus {
+   outline: none;
+   border-color: white;
+}
+
+.postnew {
+  top: 150px;
+  padding: 10px;
+  position: relative;
+  height: cover;
+  top: 150px;
+  left: 450px;
+  width: 900px;
+  border-radius: 90px;
+  text-decoration: none;
+  text-align: right;
+}
+
+.postnew button {
+  text-decoration: none;  
+  font-size: 25px;
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.postnew button:focus {
+   outline: none;
+}
+
+
+/*main post*/
+
+.post {
+  background: linear-gradient(white,#FFCCFF);
+  padding: 10px;
+  position: relative;
+  height: cover;
+  top: 200px;
+  left: 450px;
+  width: 900px;
+  border-radius: 90px;
+  text-decoration: none;
+}
+
+.post p,a,button {
+  margin-left: 50px;
+}
+
+.backup a {
+	color: white;
+	position: fixed;
+	font-size: 17px;
+	left: 210px;
+	top: 140px;
+}
+
+.post {
+	background: #FFCCFF;
+	padding: 25px;
+	position: relative;
+	height: cover;
+	top: 150px;
+	left: 150px;
+	width: 1200px;
+	border-radius: 80px;
+	text-decoration: none;
+}
+
+.post span[name="text"] {
+	margin-left: 40px;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #606060;
+    margin: 1em 0;
+    margin-left: 60px;
+    padding: 0;
+}
+
+.post p[name="heading"] {
+	font-family: 'Bree Serif';
+	font-weight: bold;
+	text-align: left;
+	font-size: 35px;
+}
+
+.post a {
+	color:#551A8B;
+}
+
+.post a[name="oneauthor"],a[name="onepost"]{
+	font-family: 'Open Sans', sans-serif;
+	padding: 5px 50px 0px 0px;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+.post p[name="authors"],p[name="posts"] {
+	padding-right: 30px;
+	text-align: left;
+	color: #000;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+.gototop a {
+	position: fixed;
+	font-size: 50px;
+	color: #fff;
+	opacity: 0.5;
+	top: 700px;
+	left: 1410px;
+}
