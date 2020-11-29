@@ -41,6 +41,7 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 <?php 
 
 $postID = $_GET['postid'];
+$_SESSION['postid'] = $postID;
 $userName = $_SESSION['username'];
 
 $query = "SELECT * FROM posts WHERE post_id = '$postID'";
@@ -64,29 +65,14 @@ if($line2){
 				<p name="content"><?php echo $line['content']?></p>
 				<p name="likoos">
 <?php if($value == "NOPE") :?>
-					<a name="liking" href="#liking"><i id="myButton" class="fa fa-heart"></i></a>
+					<a name="liking"><i id="myButton" class="fa fa-heart"></i></a>
 <?php endif?>
 <?php if($value == "LIKED") :?>
-					<a name="liking" href="#liking"><i id="myButton" class="fa fa-heart-o"></i></a>
+					<a name="liking"><i id="myButton" class="fa fa-heart-o"></i></a>
 <?php endif?>
-					<text name="likecount" id="likecount"><?php echo $line['likes']?></text>
-<?php if($line['username'] == $_SESSION['username']): 
-	$url3 = "Postpage.php?deleteLink=1&postid=";
-	$url4 = (string)$postID;
-	$url3 .= $url4;	
-	
-?>
-					<span name="delete"><a href="<?php echo $url3 ?>">Delete Post</a></span>
-		<?php 
-			if(isset($_GET['deleteLink'])){
-				$q = "CALL delete_post('$postID')";
-				mysqli_query($conn, $q);
-				header("Location:Userfeed.php");
-			}
-		?>
-<?php endif?>
-				</p>
-				</div>
+
+<text name="likecount" id="likecount"><?php echo $line['likes']?></text>
+
 <script language="JavaScript" type="text/javascript">
     var button = document.getElementById("myButton");
 	
@@ -112,14 +98,37 @@ if($line2){
         }
         newRequest.onload = function(){
             var response = newRequest.responseText;
+			console.log(response);
         	}
         	newRequest.send(requestText);
         }
         button.addEventListener('click', likeButton);
 </script>
 
+<?php if($line['username'] == $_SESSION['username']): 
+	$url3 = "Postpage.php?deleteLink=1&postid=";
+	$url4 = (string)$postID;
+	$url3 .= $url4;	
+	
+?>
+					<span name="delete"><a href="<?php echo $url3 ?>">Delete Post</a></span>
+		<?php 
+			if(isset($_GET['deleteLink'])){
+				$q = "CALL delete_post('$postID')";
+				mysqli_query($conn, $q);
+				header("Location:Userfeed.php");
+			}
+		?>
+<?php endif?>
+				</p>
+				</div>
 			<div class="gototop">
-				<a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+<?php  
+$ur = "Postpage.php?postid=";
+$l = (string)$postID;
+$ur .= $l;
+?>
+				<a href="<?php echo $ur ?>"><i class="fa fa-arrow-circle-up"></i></a>
 			</div>
 
 		</body>
