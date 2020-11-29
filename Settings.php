@@ -20,10 +20,18 @@ $username = $_SESSION['username'];
 	<div class="navigation">
 		<img src="images/logo.png" name="logo">
 		<div class="search">
-			<form action="\Userpage.php">
-				<input type="text" name="searchtext" placeholder="Search...">
+			<form method="post">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
+<?php
+if(isset($_POST['searchtext'])){
+	$url = "Search.php?str=";
+	$str = (string)$_POST['searchtext'];
+	$url .= $str ;
+	header("Location:$url");
+}
+?>
 		</div>
 		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="#explore" title="Explore"><i class="icofont-telescope"></i></a>
@@ -34,7 +42,9 @@ $username = $_SESSION['username'];
     
     <a href="Change.html">
 	<div class="changepwd">
+		<a href="Password.php">
 		<p><span name="pwd"><i class="fa fa-lock"></i></span><span name="pwdtext"> Change Password</span></p>	
+		</a>
 	</div>
 	</a>
 

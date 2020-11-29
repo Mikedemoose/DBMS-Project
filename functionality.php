@@ -4,6 +4,7 @@ session_start();
 
 $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 $userName = $_SESSION['username'] ;
+
 $postId = $_SESSION['postid'] ;
 
 
