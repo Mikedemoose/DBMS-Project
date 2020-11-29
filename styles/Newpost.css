@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree Serif);
+
+html{
+	background-image: url("images/blog6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-y: scroll;
+}
+
+body {
+	background: linear-gradient(rgba(51,0,102,1),rgba(51,0,0,0));
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 0px;
+	width: 100%;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Navigation Bar*/
+
+.navigation {
+	background-color: #000;
+	position: fixed;
+	overflow: hidden;
+	font-size: 40px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 9999;
+}
+
+.navigation img {
+	height: 80px;
+	font-size: 40px;
+	border-radius: 20px;
+	float: left;
+	display: block;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.navigation a {
+	float: left;
+	display: block;
+	color: grey;
+	text-align: center;
+	padding: 14px 66px;
+	text-decoration: none;
+	font-size: 35px;
+	border-radius: 50%;
+}
+
+.navigation a:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.navigation a[name="home"]{
+	color: #fff;
+}
+
+.navigation a[name="home"]:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.navigation .search {
+	float: left;
+	padding-right: 40px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.navigation input[type="text"] {
+	padding: 6px;
+	margin-top: 30px 0px 10px 0px;
+	padding-top: 10px;
+	border: 3px solid black;
+	width: 400px;
+	border-radius: 10px; 
+}
+
+.searchterm:focus{
+	color: #000;
+}
+
+.navigation .search button {
+	background: #fff;
+	padding: 5px 10px 5px 10px;
+	margin: 30px 0px 0px 0px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.backup a {
+	color: white;
+	position: fixed;
+	font-size: 17px;
+	left: 210px;
+	top: 140px;
+}
+
+.post {
+	background: #FFCCFF;
+	padding: 25px;
+	position: relative;
+	height: cover;
+	top: 150px;
+	left: 250px;
+	width: 1200px;
+	border-radius: 80px;
+	text-decoration: none;
+}
+
+.post p,a{
+	margin-left: 50px;
+}
+
+.heading {
+	width: 600px;
+	padding: 10px;
+	margin-left: 280px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border-radius: 20px;
+}
+
+.input{
+	width: 600px;
+	padding: 10px;
+	margin-left: 280px;
+	border: 3px solid black;
+	color: black;
+	font-size: 20px;
+	border-radius: 20px;
+	min-height: 200px;
+  	overflow-x: hidden;
+  	overflow-y: auto;
+}
+
+.input:focus,.heading:focus {
+  outline: none;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}
+
+.post button[name="submit"] {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  margin-left: 900px;
+  background-color: #192841;  
+  text-decoration: none
+  box-shadow: 1px 2px 5px rgba(0,0,0,1); 
+  padding: 6px 20px 6px 20px;
+  border-radius: 15px;
+  cursor: pointer; 
+}
+
+.post button:focus {
+	outline: none;
+}
+
+.gototop a {
+	position: fixed;
+	font-size: 50px;
+	color: #fff;
+	opacity: 0.5;
+	top: 700px;
+	left: 1410px;
+}
+
