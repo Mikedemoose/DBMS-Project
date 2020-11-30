@@ -43,7 +43,6 @@ if(isset($_POST['username']) && count($errors) == 0){
   $password = md5($password1);
   $insert = "INSERT INTO user_list VALUES('$username', '$firstname', '$lastname', '$gender', '$email', '$phone', '$password')";
   mysqli_query($conn, $insert);
-  //echo "Done boiii";
   header("Location:Login.php");
 }
 
