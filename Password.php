@@ -8,17 +8,15 @@ $query = "SELECT * FROM user_list WHERE username='$username'";
 $result = mysqli_query($conn, $query);
 $line = mysqli_fetch_assoc($result);
 
-$password = md5($line['password']);
+$password =$line['pwd'];
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-
 	<link rel="stylesheet" href="styles/Password.css" type="text/css">
 	<link rel="stylesheet" href="styles/icofont/icofont.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
-
 	<title>Change Password</title>
 </head>
   <body>
@@ -50,8 +48,10 @@ if(isset($_POST['searchtext'])){
 <?php
 	if(isset($_GET['error'])):
 ?>
-	<div id="passError" style="display:none"><?php $_GET['error']?></div>
-<?php endif ?>
+	<div id="passError" style="display:none"><?php echo $_GET['error']?></div>
+	<?php else : ?>
+	<div id="passError" style="display:none">0</div>
+<?php endif?>
 <script language="JavaScript" type="text/javascript">
 
 		var errorType = document.getElementById('passError').innerHTML ;
@@ -70,14 +70,14 @@ if(isset($_POST['searchtext'])){
 
 		<div class="pwd">
 		<form method='post'>
-			<p><input type="password" name="oldpwd" id="name" placeholder="Current Password" required/></p>
-			<p><input type="password" name="newpwd" id="name" placeholder="New Password" required/></p>
-			<p><input type="password" name="cnewpwd" id="name" placeholder="Confirm New Password" required/></p>
-			<input type="submit" value="change Password" name="submit">
+			<p><input type="password" name="oldpwd" id="name1" placeholder="Current Password" required/></p>
+			<p><input type="password" name="newpwd" id="name2" placeholder="New Password" required/></p>
+			<p><input type="password" name="cnewpwd" id="name3" placeholder="Confirm New Password" required/></p>
+			<button type="submit" name="submit">Submit</button>
 		</form>
 		</div>
 <?php
-	if(isset($_POST['submit'])){
+	if(isset($_POST['oldpwd'])){
 		$oldPass = md5(mysqli_real_escape_string($conn, $_POST['oldpwd']));
 		if($oldPass != $password){
 			header("Location:Password.php?error=1");

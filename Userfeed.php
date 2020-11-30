@@ -63,6 +63,22 @@ if(isset($_POST['searchtext'])){
 					<p><a  name="viewprofile" href="Profilepage.php">View Profile</a></p>
 				</div>
 
+<?php if(isset($_GET['message'])): ?>
+	<div id="messageText" style="display:none"><?php echo $_GET['message']?></div>
+<?php else: ?>
+	<div id="messageText" style="display:none">0</div>
+<?php endif?>
+
+<script language="JavaScript" type="text/javascript">
+
+		var errorType = document.getElementById('messageText').innerHTML ;
+		errorType = parseInt(errorType);
+		if(errorType == 1){
+			alert("Password Changed Successfully");
+		}
+
+</script>
+
 <?php 
 $query = "CALL view_feed('$username')";
 $result = mysqli_query($conn, $query);

@@ -107,7 +107,9 @@ $line = mysqli_fetch_assoc($result);
 
 <?php if($username == $username1):?>
 		<div class="postnew">
-			<button name="newpost" href="newpost.html"><i class="fa fa-plus-circle"></i> New Post</button>	
+			<a href="Newpost.php">
+			<button name="newpost" href="Newpost.php"><i class="fa fa-plus-circle"></i> New Post</button>	
+			</a>
 		</div>
 <?php endif?>
 <?php 
