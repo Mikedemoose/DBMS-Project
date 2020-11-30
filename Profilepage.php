@@ -113,7 +113,7 @@ $line = mysqli_fetch_assoc($result);
 		</div>
 <?php endif?>
 <?php 
-$query = "SELECT * FROM posts WHERE username='$username1'";
+$query = "SELECT * FROM posts WHERE username='$username1' ORDER BY posts.time_of_posting DESC";
 $result = mysqli_query($conn, $query);
 
 while($line = mysqli_fetch_assoc($result)):
