@@ -21,10 +21,18 @@ $conn = mysqli_connect("localhost", "root", "Root123", "DBMS_Project");
 	<div class="navigation">
 		<img src="images/logo.png" name="logo">
 		<div class="search">
-			<form action="\Userpage.php">
-				<input type="text" name="searchtext" placeholder="Search...">
+		<form method="post">
+				<input type="text" name="searchtext" placeholder="Search..." required>
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
+<?php
+if(isset($_POST['searchtext'])){
+	$url = "Search.php?str=";
+	$str = (string)$_POST['searchtext'];
+	$url .= $str ;
+	header("Location:$url");
+}
+?>
 		</div>
 		<a name="home" href="Userfeed.php" title="Home"><i class="fa fa-home"></i></a>
 		<a name="explore" href="Explore.php" title="Explore"><i class="icofont-telescope"></i></a>
@@ -60,8 +68,12 @@ if($line2){
 		<div class="post">
 
 			<p name="heading"><?php echo $line['title']?>
-
-				<a name="author" href="#shaiju">-<?php echo $line['username']?></a></p>
+<?php
+$url = "Profilepage.php?userProfile=";
+$url1 = (string)$line['username'];
+$url .= $url1;
+?>
+				<a name="author" href="<?php echo $url?>">-<?php echo $line['username']?></a></p>
 				<p name="content"><?php echo $line['content']?></p>
 				<p name="likoos">
 <?php if($value == "NOPE") :?>

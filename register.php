@@ -4,9 +4,7 @@
 <title>Register</title>
 
 <head>
-
 	<link href="styles/register.css" rel="stylesheet" type='text/css'>
-
 </head>
 
 <body>

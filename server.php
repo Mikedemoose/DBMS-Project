@@ -41,7 +41,8 @@ if(isset($_POST["username"])){
 
 if(isset($_POST['username']) && count($errors) == 0){
   $password = md5($password1);
-  $insert = "INSERT INTO user_list VALUES('$username', '$firstname', '$lastname', '$gender', '$email', '$phone', '$password')";
+
+  $insert = "INSERT INTO user_list VALUES('$username', '$firstname', '$lastname', '$gender', '$email', '$phone', '$password', 0, 0)";
   mysqli_query($conn, $insert);
   header("Location:Login.php");
 }
