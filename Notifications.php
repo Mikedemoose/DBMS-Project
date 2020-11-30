@@ -62,7 +62,7 @@ $url .= $url1;
 <?php endif ?>
     <a href="<?php echo $url?>">
 	<div class="notifs">
-		<p><span name="like"><i class="fa fa-heart"></i></span><span name="suku"><?php echo $line['notification']?></span></p>	
+		<p><span name="like"><i class="fa fa-heart"></i></span><span> name ="add"><i class="fa fa-user-plus"></i></span><span name="suku"><?php echo $line['notification']?></span></p>	
 	</div>
 	</a>
 <?php endwhile?>

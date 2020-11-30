@@ -173,6 +173,11 @@ body {
 	outline: none;
 }
 
+.post a[name="backup"] {
+	color: red;
+	font-size: 40px;
+}
+
 .gototop a {
 	position: fixed;
 	font-size: 50px;
