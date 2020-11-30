@@ -8,11 +8,10 @@ $username = $_SESSION['username'];
 <!DOCTYPE html>
 <html>
 <head>
-<!--
 	<link rel="stylesheet" href="styles/Newpost.css" type="text/css">
 	<link rel="stylesheet" href="styles/icofont/icofont.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
--->
+
 	<title>Newpost</title>
 </head>
 <body>
@@ -45,9 +44,9 @@ if(isset($_POST['searchtext'])){
 
 		<div class="post">
 <form method="post">
-			<p name="heading"><input type="text" class="heading" contenteditable="true" name="titleText" data-text="Title" required></div></p>
+			<p name="heading"><div class="heading"><input type="text" name="titleText" placeholder="Title" required></div></p>
 
-				<input type="text" class="input" name="contentText" contenteditable="true" data-text="Enter Text Here..." required></div>
+			<div class="input" ><input type="text" name="contentText" placeholder="Enter Text Here..." required></div>
 
 			<p><button type="submit" name="submit">Submit</button></p>
 </form>
